@@ -10,9 +10,9 @@ gem 'json'
 
 gem 'eventmachine', '~> 1.2', '>= 1.2.7'
 gem 'thin', '~> 1.8'
-gem 'sinatra', '~> 3.0', '>= 3.0.5'
-gem 'rack', '~> 2.2', '>= 2.2.4'
-gem 'rack-protection', '~> 3.0.5'
+gem 'sinatra', '~> 3.0', '>= 3.0.6'
+gem 'rack', '~> 2.2', '>= 2.2.8.1'
+gem 'rack-protection', '~> 3.0.6'
 gem 'em-websocket', '~> 0.5.3' # WebSocket support
 gem 'uglifier', '~> 4.2'
 gem 'mime-types', '~> 3.4', '>= 3.4.1'
@@ -63,7 +63,7 @@ end
 group :test do
     gem 'test-unit-full', '~> 0.0.5'
     gem 'rspec', '~> 3.12'
-    gem 'rdoc', '~> 6.5'
+    gem 'rdoc', '~> 6.5', '>= 6.5.1.1'
     gem 'browserstack-local', '~> 1.4'
 
     gem 'irb', '~> 1.6', '>= 1.6.3'
@@ -84,7 +84,7 @@ group :test do
     # nokogiri is needed by capybara which may require one of the below commands
     # sudo apt-get install libxslt-dev libxml2-dev
     # sudo port install libxml2 libxslt
-    gem 'capybara', '~> 3.38'
+    gem 'capybara', '~> 3.39', '>= 3.39.0'
 end
 
 source 'https://rubygems.org'
