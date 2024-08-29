@@ -1,6 +1,6 @@
 #
-# Copyright (c) 2006-2023 Wade Alcorn - wade@bindshell.net
-# Browser Exploitation Framework (BeEF) - http://beefproject.com
+# Copyright (c) 2006-2024 Wade Alcorn - wade@bindshell.net
+# Browser Exploitation Framework (BeEF) - https://beefproject.com
 # See the file 'doc/COPYING' for copying permission
 #
 module BeEF
@@ -12,7 +12,7 @@ module BeEF
           # Hooks the model's "save" event. Validates pattern/response and generates a rule identifier.
           before_save :check_rule
           self.table_name = 'dns_rules'
-          serialize :response, Array
+          serialize :response, type: Array
 
           private
 
@@ -45,7 +45,7 @@ module BeEF
             if resource == Resolv::DNS::Resource::IN::A
               if response.is_a?(String) && BeEF::Filters.is_valid_ip?(response, :ipv4)
                 format "t.respond!('%s')", response
-              elsif (response.is_a?(Symbol) && response.to_s =~ sym_regex) || response =~ sym_regex
+              elsif (response.is_a?(Symbol) && response.to_s =~ sym_regex) || response.to_s =~ sym_regex
                 format 't.fail!(:%s)', response.to_sym
               elsif response.is_a?(Array)
                 str1 = "t.respond!('%s');"

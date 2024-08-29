@@ -1,6 +1,6 @@
 #
-# Copyright (c) 2006-2023 Wade Alcorn - wade@bindshell.net
-# Browser Exploitation Framework (BeEF) - http://beefproject.com
+# Copyright (c) 2006-2024 Wade Alcorn - wade@bindshell.net
+# Browser Exploitation Framework (BeEF) - https://beefproject.com
 # See the file 'doc/COPYING' for copying permission
 #
 module BeEF
@@ -32,7 +32,7 @@ module BeEF
             print_info "Browser Exploitation Framework (BeEF) #{version}"
             data = "Twit: @beefproject\n"
             data += "Site: https://beefproject.com\n"
-            data += "Blog: http://blog.beefproject.com\n"
+            # data += "Blog: http://blog.beefproject.com\n"
             data += "Wiki: https://github.com/beefproject/beef/wiki\n"
             print_more data
             print_info 'Project Creator: ' + 'Wade Alcorn'.red + ' (@WadeAlcorn)'
@@ -134,6 +134,29 @@ module BeEF
               print_info "Starting WebSocketSecure server on wss://[#{config.beef_host}:#{config.get('beef.http.websocket.secure_port').to_i} [timer: #{ws_poll_timeout}]"
             end
           end
+
+          # Print WebSocket servers
+          #
+          def print_http_proxy
+            config = BeEF::Core::Configuration.instance
+            print_info "HTTP Proxy: http://#{config.get('beef.extension.proxy.address')}:#{config.get('beef.extension.proxy.port')}"
+          end
+
+          def print_dns
+            address = nil
+            port = nil
+            protocol = nil
+
+            # TODO: fix the following reference - extensions/dns/api.rb
+            # servers, interfaces, address, port, protocol, upstream_servers = get_dns_config # get the DNS configuration
+
+            # Print the DNS server information
+            unless address.nil? || port.nil? || protocol.nil?
+              print_info "DNS Server: #{address}:#{port} (#{protocol})"
+              print_more upstream_servers unless upstream_servers.empty?
+            end
+          end
+
         end
       end
     end

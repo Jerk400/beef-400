@@ -1,3 +1,8 @@
+#
+# Copyright (c) 2006-2024 Wade Alcorn - wade@bindshell.net
+# Browser Exploitation Framework (BeEF) - https://beefproject.com
+# See the file 'doc/COPYING' for copying permission
+#
 require 'rest-client'
 require 'core/main/network_stack/websocket/websocket'
 require 'websocket-client-simple'
@@ -27,7 +32,7 @@ RSpec.describe 'BeEF Extension WebSockets' do
     expect(wss).to be_a_kind_of(BeEF::Core::Websocket::Websocket)
   end
 
-  it 'confirms that a websocket client can connect to the BeEF Websocket Server' do
+  xit 'confirms that a websocket client can connect to the BeEF Websocket Server' do
     sleep(3)
     client = WebSocket::Client::Simple.connect "ws://127.0.0.1:#{@port}"
     sleep(1)

@@ -1,12 +1,12 @@
 #
-# Copyright (c) 2006-2023 Wade Alcorn - wade@bindshell.net
-# Browser Exploitation Framework (BeEF) - http://beefproject.com
+# Copyright (c) 2006-2024 Wade Alcorn - wade@bindshell.net
+# Browser Exploitation Framework (BeEF) - https://beefproject.com
 # See the file 'doc/COPYING' for copying permission
 #
 beef:
     module:
         ping_sweep_java:
-            enable: true
+            enable: false
             category: "Network"
             name: "Ping Sweep (Java)"
             description: "Discover active hosts in the internal network of the hooked browser. Same logic of the Ping Sweep module, but using an unsigned Java applet to work in browsers other than Firefox.<br> For Firefox, use the normal PingSweep module."
