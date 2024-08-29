@@ -1,6 +1,6 @@
 #
-# Copyright (c) 2006-2023 Wade Alcorn - wade@bindshell.net
-# Browser Exploitation Framework (BeEF) - http://beefproject.com
+# Copyright (c) 2006-2024 Wade Alcorn - wade@bindshell.net
+# Browser Exploitation Framework (BeEF) - https://beefproject.com
 # See the file 'doc/COPYING' for copying permission
 #
 BEEF_TEST_DIR = '/tmp/beef-test/'.freeze
@@ -26,3 +26,8 @@ RESTAPI_SENG = 'http://' + ATTACK_DOMAIN + ':3000/api/seng'
 RESTAPI_ADMIN = 'http://' + ATTACK_DOMAIN + ':3000/api/admin'
 RESTAPI_WEBRTC = 'http://' + ATTACK_DOMAIN + ':3000/api/webrtc'
 RESTAPI_REQUESTER = 'http://' + ATTACK_DOMAIN + ':3000/api/requester'
+
+# Other
+PAGE_LOAD_TIMEOUT = 5
+SERVER_START_TIMEOUT = 5
+BROWSER_HOOKING_TIMEOUT = 10 

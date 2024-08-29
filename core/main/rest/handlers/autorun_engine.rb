@@ -1,6 +1,6 @@
 #
-# Copyright (c) 2006-2023 Wade Alcorn - wade@bindshell.net
-# Browser Exploitation Framework (BeEF) - http://beefproject.com
+# Copyright (c) 2006-2024 Wade Alcorn - wade@bindshell.net
+# Browser Exploitation Framework (BeEF) - https://beefproject.com
 # See the file 'doc/COPYING' for copying permission
 #
 
@@ -81,6 +81,26 @@ module BeEF
           halt 400
         rescue StandardError => e
           print_error "Internal error while deleting Autorun rule: #{e.message}"
+          { 'success' => false, 'error' => e.message }.to_json
+        end
+
+        #
+        # Update a ruleset
+        #
+        patch '/rule/:rule_id' do
+          rule_id = params[:rule_id]
+          rule = BeEF::Core::Models::Rule.find(rule_id)
+          raise InvalidParameterError, 'id' if rule.nil?
+          data = JSON.parse request.body.read
+          rloader = BeEF::Core::AutorunEngine::RuleLoader.instance
+          rloader.update_rule_json(rule_id, data)
+
+          { 'success' => true }.to_json
+        rescue InvalidParameterError => e
+          print_error e.message
+          halt 400
+        rescue StandardError => e
+          print_error "Internal error while updating Autorun rule: #{e.message}"
           { 'success' => false, 'error' => e.message }.to_json
         end
 

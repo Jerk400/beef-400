@@ -1,6 +1,6 @@
 #
-# Copyright (c) 2006-2023 Wade Alcorn - wade@bindshell.net
-# Browser Exploitation Framework (BeEF) - http://beefproject.com
+# Copyright (c) 2006-2024 Wade Alcorn - wade@bindshell.net
+# Browser Exploitation Framework (BeEF) - https://beefproject.com
 # See the file 'doc/COPYING' for copying permission
 #
 module BeEF
@@ -39,7 +39,7 @@ module BeEF
                 data: params[:d]
               }
             rescue TypeError, ArgumentError => e
-              print_error "Hooked browser returned an invalid argument: #{e}"
+              print_debug "Hooked browser returned an invalid argument: #{e}"
             end
 
             Thread.new do

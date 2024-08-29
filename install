@@ -1,7 +1,7 @@
 #!/bin/bash
 #
-# Copyright (c) 2006-2023 Wade Alcorn - wade@bindshell.net
-# Browser Exploitation Framework (BeEF) - http://beefproject.com
+# Copyright (c) 2006-2024 Wade Alcorn - wade@bindshell.net
+# Browser Exploitation Framework (BeEF) - https://beefproject.com
 # See the file 'doc/COPYING' for copying permission
 #
 
@@ -89,7 +89,7 @@ install_linux() {
 		DISTRO_ID=$(grep ID= /etc/os-release | grep -v "BUILD" | grep -v "IMAGE" | cut -d= -f2-)
 		if [ "${DISTRO_ID}" = 'kali' ]; then
 			Distro='Kali'
-		elif [ "${DISTRO_ID}" = 'arch' ] || [ "${DISTRO_ID}" = 'garuda' ] || [ "${DISTRO_ID}" = 'artix' ] || [ "${DISTRO_ID}" = 'manjaro' ] || [ "${DISTRO_ID}" = 'blackarch' ] || [ "${DISTRO_ID}" = 'arcolinux' ]; then
+		elif [ "${DISTRO_ID}" = 'arch' ] || [ "${DISTRO_ID}" = 'garuda' ] || [ "${DISTRO_ID}" = 'artix' ] || [ "${DISTRO_ID}" = 'manjaro' ] || [ "${DISTRO_ID}" = 'blackarch' ] || [ "${DISTRO_ID}" = 'arcolinux' ] || [ "${DISTRO_ID}" = '"endeavouros"' ]; then
 			Distro='Arch'
 		elif grep -Eqi '^ID.*suse' /etc/os-release; then
 			Distro='SuSE'
@@ -244,7 +244,8 @@ finish() {
 	echo "Next steps:"
 	echo
 	echo "* Change the default password in config.yaml"
-	echo "* Configure geoipupdate to update the Maxmind GeoIP database."
+	echo "* Configure geoipupdate to update the Maxmind GeoIP database:"
+	echo "*   https://dev.maxmind.com/geoip/updating-databases"
 	echo "* Review the wiki for important configuration information:"
 	echo "  https://github.com/beefproject/beef/wiki/Configuration"
 	echo

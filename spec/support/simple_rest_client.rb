@@ -1,6 +1,6 @@
 #
-# Copyright (c) 2006-2023 Wade Alcorn - wade@bindshell.net
-# Browser Exploitation Framework (BeEF) - http://beefproject.com
+# Copyright (c) 2006-2024 Wade Alcorn - wade@bindshell.net
+# Browser Exploitation Framework (BeEF) - https://beefproject.com
 # See the file 'doc/COPYING' for copying permission
 #
 # less noisy verson of BeeRestAPI found in tools.
@@ -28,6 +28,7 @@ class BeefRestClient
   rescue StandardError => e
     { success: false, payload: e.message }
   end
+
   def version
     return { success: false, payload: 'no token' } if @token.nil?
 

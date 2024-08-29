@@ -1,6 +1,6 @@
 #
-# Copyright (c) 2006-2023 Wade Alcorn - wade@bindshell.net
-# Browser Exploitation Framework (BeEF) - http://beefproject.com
+# Copyright (c) 2006-2024 Wade Alcorn - wade@bindshell.net
+# Browser Exploitation Framework (BeEF) - https://beefproject.com
 # See the file 'doc/COPYING' for copying permission
 #
 beef:
@@ -8,7 +8,7 @@ beef:
         port_scanner:
             enable: true
             category: "Network"
-            name: "Port Scanner"
+            name: "Port Scanner (Multiple Methods)"
             description: "Scan ports in a given hostname, using WebSockets, CORS and img tags. It uses the three methods to avoid blocked ports or Same Origin Policy.<br/><br/>Note: The user may see authentication popups in the event any of the target ports are web servers using HTTP authentication."
             authors: ["javier.marcos"]
             target:
